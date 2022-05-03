@@ -17,13 +17,13 @@ public class DaoFactory {
 
     public static DaoFactory getInstance() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
 
         }
 
         DaoFactory instance = new DaoFactory(
-                "jdbc:mysql://localhost:3306/hotel", "root", "root");
+                "jdbc:postgresql://localhost:5432/hotel", "postgres", "123");
         return instance;
     }
 

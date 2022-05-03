@@ -17,10 +17,11 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
         PreparedStatement preparedStatement = null;
         ResultSet resultat = null;
         Utilisateur user = null;
-
+        System.out.println(utilisateur.getLogin());
+        System.out.println(utilisateur.getPassword());
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("SELECT * FROM user WHERE login = ? AND password = ?");
+            preparedStatement = connexion.prepareStatement("SELECT * FROM users WHERE login = ? AND password = ?");
             preparedStatement.setString(1, utilisateur.getLogin());
             preparedStatement.setString(2, utilisateur.getPassword());
             resultat = preparedStatement.executeQuery();

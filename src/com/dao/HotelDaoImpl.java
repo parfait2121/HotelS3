@@ -21,7 +21,7 @@ public class HotelDaoImpl implements HotelDao{
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("INSERT INTO hotel(nom_hotel, id_province, Adresse, email, telephone, Description , image , prix_sejour) VALUES(?, ? , ? , ? , ? , ? ,? ,?);");
+            preparedStatement = connexion.prepareStatement("INSERT INTO hotel(nom_hotel, id_province, adresse, email, telephone, description , image , prix_sejour) VALUES(?, ? , ? , ? , ? , ? ,? ,?);");
             preparedStatement.setString(1, hotel.getNom_hotel());
             preparedStatement.setInt(2, hotel.getId_province());
             preparedStatement.setString(3, hotel.getAdresse());
@@ -91,7 +91,7 @@ public class HotelDaoImpl implements HotelDao{
         int nombreElementPage = 5;
         try {
             connexion = daoFactory.getConnection();
-            String requette = "SELECT * FROM hotel WHERE nom_hotel LIKE '%" + mot_clef + "%' LIMIT ? OFFSET ?" ;
+            String requette = "SELECT * FROM hotel WHERE LOWER(nom_hotel) LIKE '%" + mot_clef + "%' LIMIT ? OFFSET ?" ;
             preparedStatement = connexion.prepareStatement(requette);
             //preparedStatement.setString(1 , mot_clef);
             preparedStatement.setInt(1, nombreElementPage);
@@ -175,7 +175,7 @@ public class HotelDaoImpl implements HotelDao{
 
 	        try {
 	            connexion = daoFactory.getConnection();
-	            String requette = "SELECT * FROM hotel WHERE nom_hotel LIKE '%" +  mot_clef + "%'";
+	            String requette = "SELECT * FROM hotel WHERE LOWER(nom_hotel)LIKE '%" +  mot_clef + "%'";
 	            preparedStatement = connexion.prepareStatement(requette);
 	           
 	            resultat = preparedStatement.executeQuery();

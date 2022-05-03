@@ -81,7 +81,7 @@ public class AcceuilBackOffice extends HttpServlet {
 			h.setTelephone(Integer.parseInt(request.getParameter("telephone")));
 			h.setPrix_sejour(Integer.parseInt(request.getParameter("prix_sejour")));
 			
-		    String CHEMIN_FICHIERS = "/C:/Users/P13A-19-Heritiana/Documents/jee/oke/test2/WebContent/imagefinale/";
+		    String CHEMIN_FICHIERS = "/D:/bossy/naina/naina s3/Gestion-Hotel-main/WebContent/imagefinale/";
 			String path = CHEMIN_FICHIERS + h.getNom_hotel();
 			File f1 = new File(path);
 			f1.mkdir();

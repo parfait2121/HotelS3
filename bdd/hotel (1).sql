@@ -104,8 +104,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `login`, `password`, `name`) VALUES
-(1, 'users1', '123', 'parfait');
+INSERT INTO user (`login`, `password`, `name`) VALUES
+('users1', '123', 'parfait');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
